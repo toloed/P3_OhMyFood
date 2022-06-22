@@ -1,0 +1,89 @@
+                    /*-----Keyframes MAIN-----*/
+            /*---LOADER---*/
+@keyframes loader {
+    0% {
+        opacity: 1;
+    }
+            
+    75% {
+        opacity: 1;
+    }
+            
+    100% {
+        opacity: 0;
+    }
+                
+}
+
+@keyframes textLoader {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes dot {
+	0% {
+		left: calc(-50% - 5px);
+	}
+
+	75% {
+		left: calc(50% + 105px);
+	}
+
+	100% {
+	left: calc(50% + 105px);
+	}
+}
+
+@keyframes dotBefore {
+	0% {
+	  left: -50px;
+	}
+	50% {
+	  left: -12px;
+	}
+	75% {
+	  left: -50px;
+	}
+	100% {
+	  left: -50px;
+	}
+}
+
+@keyframes dotAfter {
+	0% {
+	  left: -100px;
+	}
+	50% {
+	  left: -24px;
+	}
+	75% {
+	  left: -100px;
+	}
+	100% {
+	  left: -100px;
+	}
+}
+
+
+                    /*-----Keyframes MENU-----*/
+@keyframes checked {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 80px;
+    }
+    
+}
+
+@keyframes affichage {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }  
+}
