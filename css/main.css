@@ -2,9 +2,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /*--OMBRES--*/
 /*--COEUR--*/
+/*@mixin heart {
+    .card_favorite {
+        position: absolute;
+        bottom: 30px;
+        right: 10%;
+        color: #787676;
+
+        .heart_vide {
+            position: absolute;
+            font-size: 30px;
+        }
+
+        .heart_plein {
+            font-size: 30px;
+            color: transparent;
+            background-clip: text;
+            background-image: $gradient;
+            opacity: 0;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: $brkpt_desktop) {
+            bottom: 18px;
+            right: 3%;
+        }
+    }
+}*/
 /*--FOOTER--*/
-/*-----Keyframes MAIN-----*/
-/*---LOADER---*/
+/*-----Keyframes LOADER-----*/
 @keyframes loader {
   0% {
     opacity: 1;
@@ -23,13 +52,13 @@
 }
 @keyframes dot {
   0% {
-    left: calc(-50% - 5px);
+    left: -50%;
   }
   75% {
-    left: calc(50% + 105px);
+    left: 50%;
   }
   100% {
-    left: calc(50% + 105px);
+    left: 80%;
   }
 }
 @keyframes dotBefore {
@@ -60,7 +89,7 @@
     left: -100px;
   }
 }
-/*-----Keyframes MENU-----*/
+/*-----Keyframes CHECK-----*/
 @keyframes checked {
   0% {
     width: 0px;
@@ -69,6 +98,7 @@
     width: 80px;
   }
 }
+/*-----Keyframe AFFICHAGE-----*/
 @keyframes affichage {
   0% {
     opacity: 0;
@@ -116,6 +146,7 @@ body {
   font-size: 50px;
   background: linear-gradient(to right, #9356DC 10%, #FF79DA 50%, #99E2D0 60%);
   background-size: 200% auto;
+  padding: 10px;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -175,7 +206,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 98%;
+  width: 100%;
   height: 60px;
   background: #eaeaea;
   border-top: solid 4px #dddddd;
@@ -200,7 +231,7 @@ form .localisation {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 98%;
+  width: 100%;
   font-family: "Roboto";
   background: rgb(240, 238, 238);
   text-align: center;
@@ -320,7 +351,7 @@ aside ul .icon:hover {
 
 /*---Article---*/
 article {
-  width: 98%;
+  width: 100%;
   margin: auto;
   background: rgb(240, 238, 238);
 }
@@ -416,29 +447,37 @@ article section .newCard a .card_txt p {
 }
 article section .newCard .card_favorite {
   position: absolute;
-  bottom: 30px;
-  right: 10%;
-  color: #787676;
-}
-article section .newCard .card_favorite .heart_vide {
-  position: absolute;
   font-size: 30px;
-}
-article section .newCard .card_favorite .heart_plein {
-  font-size: 30px;
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(#FF79DA, #9356DC);
-  opacity: 0;
-}
-article section .newCard .card_favorite .heart_plein:hover {
-  opacity: 1;
+  bottom: 50px;
+  left: 85%;
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   article section .newCard .card_favorite {
-    bottom: 18px;
-    right: 3%;
+    bottom: 60px;
   }
+}
+article section .newCard .card_favorite .heart_vide {
+  position: absolute;
+  opacity: 1;
+  color: grey;
+  transition: opacity 600ms ease;
+}
+article section .newCard .card_favorite .heart_vide:hover {
+  opacity: 0;
+}
+article section .newCard .card_favorite .heart_plein {
+  position: absolute;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: transform 500ms ease;
+}
+article section .newCard .card_favorite .heart_plein:hover {
+  transform: scale(1);
+  opacity: 1;
 }
 article section .card {
   width: 82%;
@@ -502,29 +541,37 @@ article section .card a .card_txt p {
 }
 article section .card .card_favorite {
   position: absolute;
-  bottom: 30px;
-  right: 10%;
-  color: #787676;
-}
-article section .card .card_favorite .heart_vide {
-  position: absolute;
   font-size: 30px;
-}
-article section .card .card_favorite .heart_plein {
-  font-size: 30px;
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(#FF79DA, #9356DC);
-  opacity: 0;
-}
-article section .card .card_favorite .heart_plein:hover {
-  opacity: 1;
+  bottom: 50px;
+  left: 85%;
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   article section .card .card_favorite {
-    bottom: 18px;
-    right: 3%;
+    bottom: 60px;
   }
+}
+article section .card .card_favorite .heart_vide {
+  position: absolute;
+  opacity: 1;
+  color: grey;
+  transition: opacity 600ms ease;
+}
+article section .card .card_favorite .heart_vide:hover {
+  opacity: 0;
+}
+article section .card .card_favorite .heart_plein {
+  position: absolute;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: transform 500ms ease;
+}
+article section .card .card_favorite .heart_plein:hover {
+  transform: scale(1);
+  opacity: 1;
 }
 
 /*-----FOOTER-----*/

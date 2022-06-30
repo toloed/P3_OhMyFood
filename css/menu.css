@@ -2,9 +2,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /*--OMBRES--*/
 /*--COEUR--*/
+/*@mixin heart {
+    .card_favorite {
+        position: absolute;
+        bottom: 30px;
+        right: 10%;
+        color: #787676;
+
+        .heart_vide {
+            position: absolute;
+            font-size: 30px;
+        }
+
+        .heart_plein {
+            font-size: 30px;
+            color: transparent;
+            background-clip: text;
+            background-image: $gradient;
+            opacity: 0;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        @media (min-width: $brkpt_desktop) {
+            bottom: 18px;
+            right: 3%;
+        }
+    }
+}*/
 /*--FOOTER--*/
-/*-----Keyframes MAIN-----*/
-/*---LOADER---*/
+/*-----Keyframes LOADER-----*/
 @keyframes loader {
   0% {
     opacity: 1;
@@ -23,13 +52,13 @@
 }
 @keyframes dot {
   0% {
-    left: calc(-50% - 5px);
+    left: -50%;
   }
   75% {
-    left: calc(50% + 105px);
+    left: 50%;
   }
   100% {
-    left: calc(50% + 105px);
+    left: 80%;
   }
 }
 @keyframes dotBefore {
@@ -60,7 +89,7 @@
     left: -100px;
   }
 }
-/*-----Keyframes MENU-----*/
+/*-----Keyframes CHECK-----*/
 @keyframes checked {
   0% {
     width: 0px;
@@ -69,6 +98,7 @@
     width: 80px;
   }
 }
+/*-----Keyframe AFFICHAGE-----*/
 @keyframes affichage {
   0% {
     opacity: 0;
@@ -147,6 +177,28 @@ main .title {
   margin-top: -40px;
   z-index: 1;
   border-radius: 30px 30px 0 0;
+  /*.favorite {
+      margin-top: 45px;
+      margin-right: 5%;
+      color: #787676;
+
+      .heart_vide {
+          position: absolute;
+          font-size: 25px;
+      }
+
+      .heart_plein {
+          font-size: 25px;
+          color: transparent;
+          background-clip: text;
+          background-image: $gradient;
+          opacity: 0;
+
+          &:hover {
+              opacity: 1;
+          }
+      }
+  }*/
 }
 main .title h1 {
   font-family: "Shrikhand";
@@ -155,22 +207,42 @@ main .title h1 {
   padding-left: 5%;
 }
 main .title .favorite {
-  margin-top: 45px;
-  margin-right: 5%;
-  color: #787676;
+  position: absolute;
+  font-size: 30px;
+  top: 325px;
+  right: 12%;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  main .title .favorite {
+    top: 448px;
+  }
+}
+@media (min-width: 992px) {
+  main .title .favorite {
+    top: 578px;
+  }
 }
 main .title .favorite .heart_vide {
   position: absolute;
-  font-size: 25px;
+  opacity: 1;
+  color: grey;
+  transition: opacity 600ms ease;
 }
-main .title .favorite .heart_plein {
-  font-size: 25px;
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(#FF79DA, #9356DC);
+main .title .favorite .heart_vide:hover {
   opacity: 0;
 }
+main .title .favorite .heart_plein {
+  position: absolute;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: transform 500ms ease;
+}
 main .title .favorite .heart_plein:hover {
+  transform: scale(1);
   opacity: 1;
 }
 main .menu {
@@ -372,6 +444,9 @@ footer li:hover {
 footer li a {
   text-decoration: none;
   color: #fff;
+}
+footer li a:hover {
+  color: #c9abee;
 }
 footer .iconFooter {
   font-size: 12px;

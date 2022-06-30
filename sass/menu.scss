@@ -80,23 +80,41 @@ main {
         }
 
         .favorite {
-            margin-top: 45px;
-            margin-right: 5%;
-            color: #787676;
-        
-            .heart_vide {
-                position: absolute;
-                font-size: 25px;
+            position: absolute;
+            font-size: 30px;
+            top: 325px;
+            right: 12%;
+            cursor: pointer;
+
+            @media (min-width: $brkpt_tablet) {
+                top: 448px;
             }
     
-            .heart_plein {
-                font-size: 25px;
-                color: transparent;
-                background-clip: text;
-                background-image: $gradient;
-                opacity: 0;
+            @media (min-width: $brkpt_desktop) {
+                top: 578px;
+            }
+          
+            .heart_vide {
+                position: absolute;
+                opacity: 1;
+                color: grey;
+                transition: opacity 600ms ease;
     
                 &:hover {
+                    opacity: 0;
+                }
+            }
+            .heart_plein {
+                position: absolute;
+                background-image: $gradient;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                opacity: 0;
+                transition: transform 500ms ease;
+          
+                &:hover {
+                    transform: scale(1);
                     opacity: 1;
                 }
             }

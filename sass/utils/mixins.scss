@@ -13,33 +13,43 @@
 @mixin heart {
     .card_favorite {
         position: absolute;
-        bottom: 30px;
-        right: 10%;
-        color: #787676;
+        font-size: 30px;
+        bottom: 50px;
+        left: 85%;
+        cursor: pointer;
 
+        @media (min-width: $brkpt_desktop) {
+            bottom: 60px;
+        }
+      
         .heart_vide {
             position: absolute;
-            font-size: 30px;
-        }
-
-        .heart_plein {
-            font-size: 30px;
-            color: transparent;
-            background-clip: text;
-            background-image: $gradient;
-            opacity: 0;
+            opacity: 1;
+            color: grey;
+            transition: opacity 600ms ease;
 
             &:hover {
+                opacity: 0;
+            }
+        }
+        .heart_plein {
+            position: absolute;
+            background-image: $gradient;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transition: transform 500ms ease;
+      
+            &:hover {
+                transform: scale(1);
                 opacity: 1;
             }
         }
-
-        @media (min-width: $brkpt_desktop) {
-            bottom: 18px;
-            right: 3%;
-        }
     }
 }
+                   
+
 
                     /*--FOOTER--*/
 @mixin footer {

@@ -38,6 +38,7 @@ body {
 			font-size: 50px;
 			background: linear-gradient(to right, $clrPrimary 10%, $clrSecondary 50%, $clrTerciary 60%);
 			background-size: 200% auto;
+            padding: 10px;
             -webkit-background-clip: text;
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
@@ -92,6 +93,7 @@ header {
     flex-direction: column;
     align-items: center;
 }
+
 h1 {
     display: flex;
     justify-content: center;
@@ -103,7 +105,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 98%;
+    width: 100%;
     height: 60px;
     background: $clrForm;
     border-top: solid 4px darken($color: $clrForm, $amount: 5);;
@@ -130,7 +132,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 98%;
+    width: 100%;
     font-family: $fontTxt;
     background: $clrBackground;
     text-align: center;
@@ -262,7 +264,7 @@ aside {
 
             /*---Article---*/
 article {
-    width: 98%;
+    width: 100%;
     margin: auto;
     background: $clrBackground;
 
